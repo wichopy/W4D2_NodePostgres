@@ -19,7 +19,7 @@ client.connect((err) => {
       return console.error("error running query", err);
     }
     console.log("Inside query.");
-    console.log(result); //output: 1
+    console.log(result.rows); //output: 1
     client.end();
   });
 });
