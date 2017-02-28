@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/wichopy/W4D2_NodePostgres#readme",
   "dependencies": {
+    "knex": "^0.12.7",
     "pg": "^6.1.2"
   }
 }

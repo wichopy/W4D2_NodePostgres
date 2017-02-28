@@ -9,17 +9,23 @@ const client = new pg.Client({
   port: settings.port,
   ssl: settings.ssl
 });
-console.log("Connet to DB");
+
+const params = process.argv.splice(2);
+console.log(params[0]);
+
+console.log("Connect to DB");
 client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);
   }
-  client.query(`SELECT * FROM famous_people;`, (err, result) => {
-    if (err) {
-      return console.error("error running query", err);
-    }
-    console.log("Inside query.");
-    console.log(result.rows); //output: 1
-    client.end();
-  });
+  client.query(`SELECT * from famous_people WHERE first_name = '${params[0]}';`)
+    .then((result) => {
+      console.log("Inside query.");
+      console.log(result.rows[0].birthdate); //output: 1
+      client.end();
+    })
+    .then(() => {
+      //https://blog.risingstack.com/node-js-database-tutorial/
+      process.exit(0);
+    });
 });
