@@ -1,0 +1,22 @@
+{
+  "name": "w4d2postgresnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wichopy/W4D2_NodePostgres.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wichopy/W4D2_NodePostgres/issues"
+  },
+  "homepage": "https://github.com/wichopy/W4D2_NodePostgres#readme",
+  "dependencies": {
+    "pg": "^6.1.2"
+  }
+}
